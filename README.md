@@ -11,7 +11,7 @@ An Electron application with React and TypeScript
 ### Install
 
 ```bash
-$ npm install
+$ npm i react-router
 ```
 
 ### Development
