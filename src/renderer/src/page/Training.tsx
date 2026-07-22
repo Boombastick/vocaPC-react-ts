@@ -1,17 +1,20 @@
 import { useEffect, useState } from 'react'
-import { getProfile } from './ts/vocapc'
+import { getProfile, getQuestion } from './ts/vocapc'
+import { Profile } from './ts/types/profile'
 
-function Training(): React.JSX.Element {
-  const [profile, setProfile] = useState(null)
-
+type Trainingprops = {
+  profile: Profile
+  setProfile: React.Dispatch<React.SetStateAction<Profile | null>>
+}
+function Training({ profile, setProfile }: Trainingprops): React.JSX.Element {
   useEffect(() => {
     const load = async () => {
-      const data = await getProfile()
-      setProfile(data)
+      const question = await getQuestion(profile.current_voca_id)
     }
 
     load()
   }, [])
+
   console.log(profile)
   return (
     <div className="training-div">

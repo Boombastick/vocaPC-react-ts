@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router'
 
-function Card({ box }) {
+function Card({ box, profile, setProfile }) {
   console.log(box)
   let navigate = useNavigate()
   return (
